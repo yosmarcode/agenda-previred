@@ -6,8 +6,8 @@ export const webApiService = {
     const response = await fetch(urlApi, { method: 'GET', headers })
     return await response.json()
   },
-  getListLoardPageService: async (q: string, _page?: number, _limit?: number) => {
-    const urlApi = URL_API + `users?q=${q}&_page=${_page}&_limit=${_limit}`
+  getListLoardIdUserService: async (q: string) => {
+    const urlApi = URL_API + `users?q=${q}`
     const response = await fetch(urlApi, { method: 'GET', headers })
     return await response.json()
   },

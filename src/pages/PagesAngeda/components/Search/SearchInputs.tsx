@@ -3,12 +3,12 @@ import React from 'react'
 import { usePageContextAngenda } from '../../context/PageContextAngenda'
 
 export const SearchInputs: React.FC = () => {
-  const { handleLoadData } = usePageContextAngenda()
+  const { handleLoadUserId } = usePageContextAngenda()
 
   // buscar Contactos
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const search = e.target.value ?? ''
-    handleLoadData(search, '', '')
+    handleLoadUserId(search)
   }
 
   return (

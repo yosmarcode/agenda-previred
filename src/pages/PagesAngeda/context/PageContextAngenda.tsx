@@ -34,6 +34,26 @@ export const PageContextProviderAgenda = ({ children }: any) => {
       })
   }
 
+  const handleLoadUserId = (q: string) => {
+    setIsData(1)
+    setDataAngenda({ ...dataAgenda, loading: true, data: null })
+    webApiService
+      .getListLoardIdUserService(q)
+      .then((response) => response)
+      .then((data) => {
+        if (data) {
+          setDataAngenda({ ...dataAgenda, loading: false, data })
+          data.length > 10 && setParameters({ ...parameters, _page: +1 })
+        } else {
+          setDataAngenda({ ...dataAgenda, loading: false, data: null })
+        }
+      })
+      .catch((err: unknown) => {
+        const error = err as Error
+        console.error('Error ', error.message)
+      })
+  }
+
   // functions validate form()
   const validateForm = () => {
     if (!formData.photo || !formData.photo.includes(INCLUDES_URL)) {
@@ -78,7 +98,8 @@ export const PageContextProviderAgenda = ({ children }: any) => {
         formData,
         validateForm, // functions validate
         parameters,
-        setParameters
+        setParameters,
+        handleLoadUserId
       }}
     >
       {isData === 1 ? children : <Title>Obteniendo informacion...</Title>}
