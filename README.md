@@ -15,18 +15,15 @@ npm install
 npm start
 ```
 
-El servidor se levanta en el puerto [localhost:9000](http://localhost:3000). esto depende igual del puerto disponible
+El servidor se levanta en el puerto [localhost:3000](http://localhost:3000). esto depende igual del puerto disponible
 
 ### Herramientas usadadas
 
 
-| Librería |Descripción |                                                                                                                                                                   
-| ----------- | :------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 |  "standard": "^17.1.0" | Herramienta que permite ejecutar formateo del proyecto esto igual depende de la libreria eslint |
 |  "sweetalert2": "^11.10.5" | Herramienta que permite mostrar notificaciones |
-|  "antd" | Comó diseño de componentes|
+|  "antd" | Comó diseño de componentes |
 
-                                                                                 |
 Para que funcione el tema del formateo se debe de configurar lo siguiente
 
 En el Archivo package.json, agregar la siguiente linea en 
