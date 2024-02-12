@@ -31,15 +31,18 @@ const TableData: React.FC = () => {
             name: resp.name ?? '',
             description: resp.description ?? '',
             photo: resp.photo ?? '',
-
             loading: false
           })
           setTimeout(() => {
             handleOpenDrawer() // levando el drawer
           }, 1000)
         } else {
-          setDataForm({ ...FormData, dataForm: null, loading: false })
+          setDataForm({ ...formData, dataForm: null, loading: false })
         }
+      }).catch((err: unknown) => {
+        const error = err as Error
+        console.error('Error obtener registro id: ', error.message)
+        setDataForm({ ...formData, dataForm: null, loading: false })
       })
     }
   }
