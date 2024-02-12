@@ -31,6 +31,7 @@ export const PageContextProviderAgenda = ({ children }: any) => {
       .catch((err: unknown) => {
         const error = err as Error
         console.error('Error ', error.message)
+        setDataAngenda({ ...dataAgenda, loading: false, data: null })
       })
   }
 
@@ -51,6 +52,7 @@ export const PageContextProviderAgenda = ({ children }: any) => {
       .catch((err: unknown) => {
         const error = err as Error
         console.error('Error ', error.message)
+        setDataAngenda({ ...dataAgenda, loading: false, data: null })
       })
   }
 
